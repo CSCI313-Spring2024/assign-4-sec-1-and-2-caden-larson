@@ -1,5 +1,1 @@
-# CRUD application with Angular Signals V16
-
-This app is a basic contacts app showing CRUD operations using the Angular Signals implementation - which has just been released in v16. Services are used to add artificial delay to mimic an API call - will be updating this to showcase more of signals and what they bring to the table with Angular.
-
-Cheers :)
+Caden Larson's Assignment 4 based on 3 part tutorial: https://www.youtube.com/watch?v=FgH1g8o-Cfc. This guy is the goat.

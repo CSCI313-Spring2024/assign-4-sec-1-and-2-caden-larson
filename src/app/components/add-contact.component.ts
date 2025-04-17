@@ -21,7 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class AddContactComponent {
   private router = inject(Router);
-  private api = inject(ApiService);
+  private api = inject(ApiService); // I'm not gonna use this though
 
   saving = signal(false);
 
