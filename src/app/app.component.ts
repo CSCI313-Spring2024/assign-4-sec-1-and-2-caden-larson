@@ -1,56 +1,38 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     CommonModule,
     RouterOutlet,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterModule,
-    MatProgressSpinnerModule,
-    MatSnackBarModule,
+    RouterModule
   ],
   template: `
-    <mat-toolbar
-      >My Contacts
-      <button mat-icon-button routerLink="/add">
-        <mat-icon>add_circle</mat-icon>
-      </button>
-    </mat-toolbar>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <span class="navbar-brand">My Contacts</span>
+        <button class="btn btn-outline-light" routerLink="/add">
+          <i class="bi bi-plus-circle"></i> Add Contact
+        </button>
+      </div>
+    </nav>
     <router-outlet></router-outlet>
   `,
   styles: [
     `
-      @use '@angular/material' as mat;
-
-      mat-toolbar {
-        justify-content: space-between;
-
-        @include mat.toolbar-overrides(
-          (
-            container-background-color: var(--mat-sys-primary),
-            container-text-color: var(--mat-sys-on-primary),
-          )
-        );
-
-        @include mat.icon-button-overrides(
-          (
-            icon-color: var(--mat-sys-on-primary),
-          )
-        );
+      .navbar {
+        margin-bottom: 20px;
       }
-
-      .container {
-        position: relative;
+      .btn-outline-light {
+        color: #ffffff;
+        border-color: #ffffff;
+      }
+      .btn-outline-light:hover {
+        background-color: #ffffff;
+        color: #000;
       }
     `,
   ],

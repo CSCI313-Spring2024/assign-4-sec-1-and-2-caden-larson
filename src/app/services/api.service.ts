@@ -24,6 +24,12 @@ export class ApiService {
       phone: '555-234-5678',
       email: 'sarah.j@email.com',
     },
+    {
+      id: '3',
+      name: 'Caden Larson',
+      phone: '218-593-1067',
+      email: 'caden.j.larson@email.com',
+    },
     
   ];
 

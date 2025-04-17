@@ -3,25 +3,27 @@ import { Router } from '@angular/router';
 import { ContactFormComponent } from './contact-form.component';
 import { Contact } from '../model/contact.model';
 import { ApiService } from '../services/api.service';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-add-contact',
   standalone: true,
-  imports: [ContactFormComponent, MatProgressSpinnerModule],
+  imports: [ContactFormComponent],
   template: `
-    <app-contact-form title="Add Contact" (save)="addContact($event)" />
-    @if (saving()) {
-    <mat-progress-spinner
-      mode="indeterminate"
-      diameter="50"
-    ></mat-progress-spinner>
-    }
+    <div class="container my-5">
+      <app-contact-form title="Add Contact" (save)="addContact($event)" />
+
+      <div *ngIf="saving()" class="text-center mt-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Saving...</span>
+        </div>
+        <p class="mt-2">Saving...</p>
+      </div>
+    </div>
   `,
 })
 export class AddContactComponent {
   private router = inject(Router);
-  private api = inject(ApiService); // I'm not gonna use this though
+  private api = inject(ApiService);
 
   saving = signal(false);
 
